@@ -64,3 +64,24 @@ RUN         apt-get update && \
                 php-mysql \
                 php-xml && \
             apt-get clean
+
+# Install MySQL
+RUN         apt-get update && \
+            apt-get install --assume-yes \
+                default-mysql-client \
+                default-mysql-server && \
+            apt-get clean && \
+            sed -i '\|\[mysqld\]|a ft_min_word_len = 2' /etc/mysql/mariadb.conf.d/50-server.cnf && \
+            sed -i 's|user.*|user            = '"$RUN_USER"'|' /etc/mysql/mariadb.conf.d/50-server.cnf && \
+            sed -i 's|datadir.*|datadir         = /wiki/db|' /etc/mysql/mariadb.conf.d/50-server.cnf && \
+            sed -i 's|key_buffer.*|key_buffer_size         = 16M|' /etc/mysql/mariadb.conf.d/50-server.cnf && \
+            sed -i 's|max_allowed_packet.*|max_allowed_packet      = 8M|' /etc/mysql/mariadb.conf.d/50-server.cnf && \
+            sed -i 's|myisam-recover.*|myisam-recover-options  = BACKUP|' /etc/mysql/mariadb.conf.d/50-server.cnf && \
+            sed -i 's|log_error.*|log_error                = /var/log/mysql/dberror.log|' /etc/mysql/mariadb.conf.d/50-server.cnf && \
+            sed -i 's|syslog.*|# syslog|' /etc/mysql/mariadb.conf.d/50-mysqld_safe.cnf && \
+            rm -rf /var/lib/mysql && \
+            rm -rf /var/log/mysql && \
+            ln -s /wiki/logs /var/log/mysql && \
+            chown -h $RUN_USER:$RUN_GROUP /var/log/mysql && \
+            mkdir -p /var/run/mysqld && \
+            chown -R $RUN_USER:$RUN_GROUP /var/run/mysqld
