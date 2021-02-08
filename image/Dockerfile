@@ -85,3 +85,25 @@ RUN         apt-get update && \
             chown -h $RUN_USER:$RUN_GROUP /var/log/mysql && \
             mkdir -p /var/run/mysqld && \
             chown -R $RUN_USER:$RUN_GROUP /var/run/mysqld
+
+# Install Apache
+RUN         apt-get update && \
+            apt-get install --assume-yes \
+                apache2 \
+                libapache2-mod-php && \
+            apt-get clean && \
+            sed -i 's|:80>|:'"$RUN_PORT"'>|' /etc/apache2/sites-available/000-default.conf && \
+            sed -i 's|#ServerName www.example.com|ServerName localhost|' /etc/apache2/sites-available/000-default.conf && \
+            mv /tmp/wiki.conf /etc/apache2/sites-available && \
+            sed -i 's|Listen 80|Listen '"$RUN_PORT"'|' /etc/apache2/ports.conf && \
+            echo "ServerName localhost" > /etc/apache2/conf-available/servername.conf && \
+            a2enconf servername && \
+            a2enmod cgi expires headers rewrite && \
+            a2ensite wiki && \
+            rm -rf /var/log/apache2 && \
+            ln -s /wiki/logs /var/log/apache2 && \
+            chown -h $RUN_USER:$RUN_GROUP /var/log/apache2 && \
+            mkdir -p /var/lock/apache2 && \
+            chown -R $RUN_USER:$RUN_GROUP /var/lock/apache2 && \
+            mkdir -p /var/run/apache2 && \
+            chown -R $RUN_USER:$RUN_GROUP /var/run/apache2
