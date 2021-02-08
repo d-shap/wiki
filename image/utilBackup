@@ -1,0 +1,24 @@
+#!/bin/bash
+if [ "$1" != "" ];
+then
+    DUMP="$DB_NAME.dump"
+    TEMPDUMPFILE="/wiki/tmp_$DUMP"
+    DUMPFILE="/wiki/$DUMP"
+    TEMPFILE="/wiki/backups/tmp_$1.tar.gz"
+    FILE="/wiki/backups/$1.tar.gz"
+    source /wiki/scripts/containerConfig
+
+    $stopWebCmd
+
+    mysqldump --max-allowed-packet=100M --user="$DB_USER_NAME" --password="$DB_USER_PASSWORD" "$DB_NAME" > $TEMPDUMPFILE
+    mv $TEMPDUMPFILE $DUMPFILE
+
+    cd /wiki
+    tar -czf $TEMPFILE $DUMP data
+    rm -rf $FILE
+    mv $TEMPFILE $FILE
+
+    rm $DUMPFILE
+
+    $startWebCmd
+fi
