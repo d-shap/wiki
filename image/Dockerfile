@@ -107,3 +107,10 @@ RUN         apt-get update && \
             chown -R $RUN_USER:$RUN_GROUP /var/lock/apache2 && \
             mkdir -p /var/run/apache2 && \
             chown -R $RUN_USER:$RUN_GROUP /var/run/apache2
+
+# Configure app
+RUN         cd /tmp && \
+            wget -O $WIKI_DOWNLOAD_NAME.tar.gz $WIKI_DOWNLOAD_URL && \
+            tar xzf $WIKI_DOWNLOAD_NAME.tar.gz -C /var/www/html && \
+            rm $WIKI_DOWNLOAD_NAME.tar.gz && \
+            mv /var/www/html/$WIKI_FOLDER_NAME /var/www/html/wiki
