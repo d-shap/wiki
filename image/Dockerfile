@@ -30,6 +30,11 @@ RUN         echo "deb http://ftp.debian.org/debian buster-backports main" >> /et
                 software-properties-common \
                 vim \
                 wget && \
+            apt-get update && \
+            apt-get install --assume-yes \
+                git \
+                imagemagick \
+                inkscape && \
             apt-get clean
 
 # Create user and group
@@ -44,3 +49,18 @@ RUN         mkdir /wiki && \
             mkdir /wiki/logs && \
             mkdir /wiki/backups && \
             chown -R $RUN_USER:$RUN_GROUP /wiki
+
+# Install PHP
+RUN         apt-get update && \
+            apt-get install --assume-yes \
+                php \
+                php-apcu \
+                php-bcmath \
+                php-cli \
+                php-curl \
+                php-gd \
+                php-intl \
+                php-mbstring \
+                php-mysql \
+                php-xml && \
+            apt-get clean
