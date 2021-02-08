@@ -114,3 +114,23 @@ RUN         cd /tmp && \
             tar xzf $WIKI_DOWNLOAD_NAME.tar.gz -C /var/www/html && \
             rm $WIKI_DOWNLOAD_NAME.tar.gz && \
             mv /var/www/html/$WIKI_FOLDER_NAME /var/www/html/wiki
+
+# Configure helper scripts
+RUN         mv /tmp/containerConfig /wiki/scripts && \
+            mv /tmp/containerDummy /wiki/scripts && \
+            mv /tmp/containerStartup /wiki/scripts && \
+            mv /tmp/containerShutdown /wiki/scripts && \
+            mv /tmp/webStartup /wiki/scripts && \
+            mv /tmp/webShutdown /wiki/scripts && \
+            mv /tmp/utilInitialize /wiki/scripts && \
+            mv /tmp/utilChangeRootPassword /wiki/scripts && \
+            mv /tmp/utilChangeUserPassword /wiki/scripts && \
+            mv /tmp/utilBackup /wiki/scripts && \
+            mv /tmp/utilRestore /wiki/scripts && \
+            chmod 755 /wiki/scripts/*
+
+USER        $RUN_USER
+
+EXPOSE      $RUN_PORT
+
+ENTRYPOINT  ["/wiki/scripts/containerStartup"]
