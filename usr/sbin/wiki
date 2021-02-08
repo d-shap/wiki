@@ -1,0 +1,14 @@
+#!/bin/bash
+docker run \
+    --rm \
+    --name wiki \
+    -d \
+    -v /etc/localtime:/etc/localtime \
+    -v /wiki/db:/wiki/db \
+    -v /wiki/data:/wiki/data \
+    -v /var/log/wiki:/wiki/logs \
+    -v /var/backups/wiki:/wiki/backups \
+    -e DB_ROOT_PASSWORD="some_password" \
+    -e DB_USER_PASSWORD="some_password" \
+    -p 8002:8002 \
+        wiki
