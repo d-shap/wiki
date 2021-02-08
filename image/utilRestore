@@ -1,0 +1,22 @@
+#!/bin/bash
+if [ "$1" != "" ];
+then
+    DUMP="$DB_NAME.dump"
+    DUMPFILE="/wiki/$DUMP"
+    FILE="/wiki/backups/$1.tar.gz"
+    source /wiki/scripts/containerConfig
+
+    if [ -e "$FILE" ];
+    then
+        $stopWebCmd
+
+        cd /wiki
+        tar -xzf $FILE $DUMP data
+
+        mysql --user="$DB_USER_NAME" --password="$DB_USER_PASSWORD" "$DB_NAME" < $DUMPFILE
+
+        rm $DUMPFILE
+
+        $startWebCmd
+    fi
+fi
