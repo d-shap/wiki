@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ ! -d /wiki/db/mysql ];
+then
+    mysql_install_db
+fi
+
+trap /wiki/scripts/containerShutdown HUP SIGHUP INT SIGINT QUIT SIGQUIT TERM SIGTERM
+
+source /wiki/scripts/containerConfig
+$startDbCmd & $startWebCmd & $startDummyCmd
+eval $waitDummyCmd
