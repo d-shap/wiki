@@ -63,7 +63,9 @@ RUN         apt-get update && \
                 php-mbstring \
                 php-mysql \
                 php-xml && \
-            apt-get clean
+            apt-get clean && \
+            phpenmod mbstring && \
+            phpenmod xml
 
 # Install MySQL
 RUN         apt-get update && \
