@@ -113,7 +113,10 @@ RUN         cd /tmp && \
             wget -O $WIKI_DOWNLOAD_NAME.tar.gz $WIKI_DOWNLOAD_URL && \
             tar xzf $WIKI_DOWNLOAD_NAME.tar.gz -C /var/www/html && \
             rm $WIKI_DOWNLOAD_NAME.tar.gz && \
-            mv /var/www/html/$WIKI_FOLDER_NAME /var/www/html/wiki
+            mv /var/www/html/$WIKI_FOLDER_NAME /var/www/html/wiki && \
+            mv /tmp/LocalSettings.php /var/www/html/wiki && \
+            sed -i 's|\$wgDBname.*|\$wgDBname = "'"$DB_NAME"'";|' /var/www/html/wiki/LocalSettings.php && \
+            sed -i 's|\$wgDBuser.*|\$wgDBuser = "'"$DB_USER_NAME"'";|' /var/www/html/wiki/LocalSettings.php
 
 # Configure helper scripts
 RUN         mv /tmp/containerConfig /wiki/scripts && \
