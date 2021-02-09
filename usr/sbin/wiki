@@ -5,7 +5,7 @@ docker run \
     -d \
     -v /etc/localtime:/etc/localtime \
     -v /wiki/db:/wiki/db \
-    -v /wiki/data:/wiki/data \
+    -v /wiki/images:/wiki/images \
     -v /var/log/wiki:/wiki/logs \
     -v /var/backups/wiki:/wiki/backups \
     -e DB_ROOT_PASSWORD="some_password" \
