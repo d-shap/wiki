@@ -44,7 +44,7 @@ RUN         groupadd -g $hostgid $RUN_GROUP && \
 # Configure application folders
 RUN         mkdir /wiki && \
             mkdir /wiki/db && \
-            mkdir /wiki/data && \
+            mkdir /wiki/images && \
             mkdir /wiki/scripts && \
             mkdir /wiki/logs && \
             mkdir /wiki/backups && \
@@ -114,6 +114,8 @@ RUN         cd /tmp && \
             tar xzf $WIKI_DOWNLOAD_NAME.tar.gz -C /var/www/html && \
             rm $WIKI_DOWNLOAD_NAME.tar.gz && \
             mv /var/www/html/$WIKI_FOLDER_NAME /var/www/html/wiki && \
+            rm -rf /var/www/html/wiki/images && \
+            ln -s /wiki/images /var/www/html/wiki/images && \
             mv /tmp/LocalSettings.php /var/www/html/wiki && \
             sed -i 's|\$wgDBname.*|\$wgDBname = "'"$DB_NAME"'";|' /var/www/html/wiki/LocalSettings.php && \
             sed -i 's|\$wgDBuser.*|\$wgDBuser = "'"$DB_USER_NAME"'";|' /var/www/html/wiki/LocalSettings.php

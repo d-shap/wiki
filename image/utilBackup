@@ -14,7 +14,7 @@ then
     mv $TEMPDUMPFILE $DUMPFILE
 
     cd /wiki
-    tar -czf $TEMPFILE $DUMP data
+    tar -czf $TEMPFILE $DUMP images
     rm -rf $FILE
     mv $TEMPFILE $FILE
 

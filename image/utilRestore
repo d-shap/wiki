@@ -11,7 +11,7 @@ then
         $stopWebCmd
 
         cd /wiki
-        tar -xzf $FILE $DUMP data
+        tar -xzf $FILE $DUMP images
 
         mysql --user="$DB_USER_NAME" --password="$DB_USER_PASSWORD" "$DB_NAME" < $DUMPFILE
 
