@@ -12,6 +12,22 @@ if [ "$SERVER" != "" ];
 then
     sed -i 's|\$wgServer.*|\$wgServer = "'"$SERVER"'";|' /var/www/html/wiki/LocalSettings.php
 fi
+if [ "$EMERGENCY_CONTACT" != "" ];
+then
+    sed -i 's|\$wgEmergencyContact.*|\$wgEmergencyContact = "'"$EMERGENCY_CONTACT"'";|' /var/www/html/wiki/LocalSettings.php
+fi
+if [ "$PASSWORD_SENDER" != "" ];
+then
+    sed -i 's|\$wgPasswordSender.*|\$wgPasswordSender = "'"$PASSWORD_SENDER"'";|' /var/www/html/wiki/LocalSettings.php
+fi
+if [ "$LANGUAGE_CODE" != "" ];
+then
+    sed -i 's|\$wgLanguageCode.*|\$wgLanguageCode = "'"$LANGUAGE_CODE"'";|' /var/www/html/wiki/LocalSettings.php
+fi
+if [ "$SECRET_KEY" != "" ];
+then
+    sed -i 's|\$wgSecretKey.*|\$wgSecretKey = "'"$SECRET_KEY"'";|' /var/www/html/wiki/LocalSettings.php
+fi
 sed -i 's|\$wgDBpassword.*|\$wgDBpassword = "'"$DB_USER_PASSWORD"'";|' /var/www/html/wiki/LocalSettings.php
 
 trap /wiki/scripts/containerShutdown HUP SIGHUP INT SIGINT QUIT SIGQUIT TERM SIGTERM
