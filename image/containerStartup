@@ -2,6 +2,7 @@
 if [ ! -d /wiki/db/mysql ];
 then
     mysql_install_db
+    cd /var/www/html/wiki && php maintenance/update.php
 fi
 
 if [ "$SITE_NAME" != "" ];
