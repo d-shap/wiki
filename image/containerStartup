@@ -2,7 +2,6 @@
 if [ ! -d /wiki/db/mysql ];
 then
     mysql_install_db
-    INITIALIZE_DATABASE=1
 fi
 
 if [ "$SITE_NAME" != "" ];
@@ -30,11 +29,6 @@ then
     sed -i 's|\$wgSecretKey.*|\$wgSecretKey = "'"$SECRET_KEY"'";|' /var/www/html/wiki/LocalSettings.php
 fi
 sed -i 's|\$wgDBpassword.*|\$wgDBpassword = "'"$DB_USER_PASSWORD"'";|' /var/www/html/wiki/LocalSettings.php
-
-if [ "$INITIALIZE_DATABASE" != "" ];
-then
-    php /var/www/html/wiki/maintenance/update.php
-fi
 
 trap /wiki/scripts/containerShutdown HUP SIGHUP INT SIGINT QUIT SIGQUIT TERM SIGTERM
 
