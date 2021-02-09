@@ -6,7 +6,7 @@ This user owns wiki process and owns wiki files.
 
 To run container next volumes should be mapped:
 * folder for SQL database
-* folder for wiki files
+* folder for wiki images
 * logs folder
 * backups folder
 
@@ -47,7 +47,7 @@ To run container next volumes should be mapped:
     sudo mkdir /wiki/db
     ```
     ```
-    sudo mkdir /wiki/data
+    sudo mkdir /wiki/images
     ```
 2. Create folder for logs:
     ```
