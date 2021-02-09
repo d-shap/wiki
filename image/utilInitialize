@@ -10,6 +10,7 @@ setUserPassword() {
 
 createDatabase() {
     mysql --user=root --password="$DB_ROOT_PASSWORD" -e "CREATE DATABASE $DB_NAME;"
+    php /var/www/html/wiki/maintenance/update.php
 }
 
 case $1 in
