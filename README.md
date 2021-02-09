@@ -101,31 +101,27 @@ To run container next volumes should be mapped:
     ```
     docker run ... -e DB_USER_PASSWORD="<some_password>" ...  
     ```
-12. Specify wiki site name in **/usr/sbin/wiki** file:
-    ```
-    docker run ... -e SITE_NAME="<some_site_name>" ...  
-    ```
-13. Specify wiki server in **/usr/sbin/wiki** file:
+12. Specify wiki server in **/usr/sbin/wiki** file:
     ```
     docker run ... -e SERVER="<some_server>" ...  
     ```
-14. Specify wiki language code in **/usr/sbin/wiki** file:
+13. Specify wiki language code in **/usr/sbin/wiki** file:
     ```
     docker run ... -e LANGUAGE_CODE="<some_language_code>" ...  
     ```
-15. Specify wiki secret key in **/usr/sbin/wiki** file:
+14. Specify wiki secret key in **/usr/sbin/wiki** file:
     ```
     docker run ... -e SECRET_KEY="<some_secret_key>" ...  
     ```
-16. Start wiki service:
+15. Start wiki service:
     ```
     sudo service wiki start
     ```
-17. Initialize wiki database:
+16. Initialize wiki database:
     ```
     sudo wkutil initialize
     ```
-18. Restart wiki service:
+17. Restart wiki service:
     ```
     sudo service wiki restart
     ```
