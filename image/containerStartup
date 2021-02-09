@@ -6,7 +6,7 @@ fi
 
 if [ "$SITE_NAME" != "" ];
 then
-    sed -i 's|\$wgSitename.*|\$wgSitename = "/'"$SITE_NAME"'";|' /var/www/html/wiki/LocalSettings.php
+    sed -i 's|\$wgSitename.*|\$wgSitename = "'"$SITE_NAME"'";|' /var/www/html/wiki/LocalSettings.php
 fi
 if [ "$SERVER" != "" ];
 then
