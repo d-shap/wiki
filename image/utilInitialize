@@ -13,6 +13,7 @@ createDatabase() {
     mv /var/www/html/wiki/LocalSettings.php /var/www/html/wiki/LocalSettings.php.bac
     php /var/www/html/wiki/maintenance/install.php --dbuser wiki --dbpass $DB_USER_PASSWORD --pass password1% --dbname wiki --dbtype mysql --lang en MediaWiki admin
     grep "\$wgSecretKey" /var/www/html/wiki/LocalSettings.php
+    grep "\$wgUpgradeKey" /var/www/html/wiki/LocalSettings.php
 }
 
 case $1 in
