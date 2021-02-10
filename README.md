@@ -101,7 +101,7 @@ To run container next volumes should be mapped:
     ```
     docker run ... -e DB_USER_PASSWORD="<some_password>" ...  
     ```
-12. Specify wiki server in **/usr/sbin/wiki** file:
+12. Specify wiki server URL in **/usr/sbin/wiki** file:
     ```
     docker run ... -e SERVER="<some_server>" ...  
     ```
@@ -109,19 +109,24 @@ To run container next volumes should be mapped:
     ```
     docker run ... -e LANGUAGE_CODE="<some_language_code>" ...  
     ```
-14. Specify wiki secret key in **/usr/sbin/wiki** file:
-    ```
-    docker run ... -e SECRET_KEY="<some_secret_key>" ...  
-    ```
-15. Start wiki service:
+14. Start wiki service:
     ```
     sudo service wiki start
     ```
-16. Initialize wiki database:
+15. Initialize wiki database:
     ```
     sudo wkutil initialize
     ```
-17. Restart wiki service:
+16. Obtain the generated secret key and upgrade key from the output.
+17. Specify wiki secret key in **/usr/sbin/wiki** file:
+    ```
+    docker run ... -e SECRET_KEY="<some_key>" ...  
+    ```
+18. Specify wiki upgrade key in **/usr/sbin/wiki** file:
+    ```
+    docker run ... -e UPGRADE_KEY="<some_key>" ...  
+    ```
+19. Restart wiki service:
     ```
     sudo service wiki restart
     ```
