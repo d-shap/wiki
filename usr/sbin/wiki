@@ -12,6 +12,7 @@ docker run \
     -e DB_USER_PASSWORD="some_password" \
     -e SERVER="http://localhost:8002" \
     -e LANGUAGE_CODE="en" \
-    -e SECRET_KEY="some_secret" \
+    -e SECRET_KEY="some_key" \
+    -e UPGRADE_KEY="some_key" \
     -p 8002:8002 \
         wiki
