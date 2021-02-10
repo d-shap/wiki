@@ -130,6 +130,8 @@ To run container next volumes should be mapped:
     ```
     sudo service wiki restart
     ```
+20. Log in to the interface and change the admin password.
+    The default login/password is **admin**/**password1%**.
 
 ## Management
 ### Service management
