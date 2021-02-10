@@ -118,7 +118,8 @@ RUN         cd /tmp && \
             ln -s /wiki/images /var/www/html/wiki/images && \
             mv /tmp/LocalSettings.php /var/www/html/wiki && \
             sed -i 's|\$wgDBname.*|\$wgDBname = "'"$DB_NAME"'";|' /var/www/html/wiki/LocalSettings.php && \
-            sed -i 's|\$wgDBuser.*|\$wgDBuser = "'"$DB_USER_NAME"'";|' /var/www/html/wiki/LocalSettings.php
+            sed -i 's|\$wgDBuser.*|\$wgDBuser = "'"$DB_USER_NAME"'";|' /var/www/html/wiki/LocalSettings.php && \
+            chown -R wiki:wiki /var/www/html/wiki
 
 # Configure helper scripts
 RUN         mv /tmp/containerConfig /wiki/scripts && \
