@@ -10,9 +10,8 @@ docker run \
     -v /var/backups/wiki:/wiki/backups \
     -e DB_ROOT_PASSWORD="some_password" \
     -e DB_USER_PASSWORD="some_password" \
-    -e SITE_NAME="Wiki" \
-    -e SERVER="http://localhost:8002/wiki" \
+    -e SERVER="http://localhost:8002" \
     -e LANGUAGE_CODE="en" \
-    -e SECRET_KEY="e644bfc6c39f807803fac14ecb0434b29d9eaca158b62bfd74030c89bfa13cb7" \
+    -e SECRET_KEY="some_secret" \
     -p 8002:8002 \
         wiki
