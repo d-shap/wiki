@@ -28,6 +28,10 @@ if [ "$SECRET_KEY" != "" ];
 then
     sed -i 's|\$wgSecretKey.*|\$wgSecretKey = "'"$SECRET_KEY"'";|' /var/www/html/wiki/LocalSettings.php
 fi
+if [ "$UPGRADE_KEY" != "" ];
+then
+    sed -i 's|\$wgUpgradeKey.*|\$wgUpgradeKey = "'"$UPGRADE_KEY"'";|' /var/www/html/wiki/LocalSettings.php
+fi
 sed -i 's|\$wgDBpassword.*|\$wgDBpassword = "'"$DB_USER_PASSWORD"'";|' /var/www/html/wiki/LocalSettings.php
 
 trap /wiki/scripts/containerShutdown HUP SIGHUP INT SIGINT QUIT SIGQUIT TERM SIGTERM
