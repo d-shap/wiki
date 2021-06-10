@@ -12,9 +12,9 @@ ENV         DEBIAN_FRONTEND=noninteractive \
             APACHE_RUN_GROUP=wiki \
             DB_NAME=wiki \
             DB_USER_NAME=wiki \
-            WIKI_DOWNLOAD_URL="https://releases.wikimedia.org/mediawiki/1.35/mediawiki-1.35.1.tar.gz" \
-            WIKI_DOWNLOAD_NAME="mediawiki-1.35.1" \
-            WIKI_FOLDER_NAME="mediawiki-1.35.1"
+            WIKI_DOWNLOAD_URL="https://releases.wikimedia.org/mediawiki/1.36/mediawiki-1.36.0.tar.gz" \
+            WIKI_DOWNLOAD_NAME="mediawiki-1.36.1" \
+            WIKI_FOLDER_NAME="mediawiki-1.36.1"
 
 COPY        . /tmp
 
