@@ -8,8 +8,8 @@ ENV         DEBIAN_FRONTEND=noninteractive \
             RUN_USER=wiki \
             RUN_GROUP=wiki \
             RUN_PORT=8002 \
-            APACHE_RUN_USER=$RUN_USER \
-            APACHE_RUN_GROUP=$RUN_GROUP \
+            APACHE_RUN_USER=wiki \
+            APACHE_RUN_GROUP=wiki \
             DB_NAME=wiki \
             DB_USER_NAME=wiki \
             WIKI_DOWNLOAD_URL="https://releases.wikimedia.org/mediawiki/1.35/mediawiki-1.35.1.tar.gz" \
@@ -25,6 +25,7 @@ RUN         echo "deb http://ftp.debian.org/debian buster-backports main" >> /et
                 apt-utils \
                 build-essential \
                 cron \
+                curl \
                 net-tools \
                 procps \
                 software-properties-common \
