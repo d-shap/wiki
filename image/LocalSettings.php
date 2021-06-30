@@ -139,6 +139,3 @@ wfLoadExtension( 'SyntaxHighlight_GeSHi' );
 
 # TemplateData extension settings
 wfLoadExtension( 'TemplateData' );
-
-# VisualEditor extension settings
-wfLoadExtension( 'VisualEditor' );
