@@ -138,3 +138,13 @@ wfLoadSkin( 'Vector' );
 
 # End of automatically generated settings.
 # Add more configuration options below.
+
+# Scribunto extension settings
+wfLoadExtension( 'Scribunto' );
+$wgScribuntoDefaultEngine = 'luastandalone';
+
+# SyntaxHighlight extension settings
+wfLoadExtension( 'SyntaxHighlight_GeSHi' );
+
+# WikiEditor extension settings
+$wgHiddenPrefs[] = 'usebetatoolbar';
