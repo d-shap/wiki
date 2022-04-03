@@ -65,7 +65,7 @@ $wgEnableUploads = true;
 $wgUseImageMagick = true;
 $wgImageMagickConvertCommand = "/usr/bin/convert";
 
-$wgStrictFileExtensions = true
+$wgStrictFileExtensions = true;
 $wgFileExtensions = [ 'png', 'gif', 'jpg', 'jpeg', 'webp', 'svg' ];
 
 # InstantCommons allows wiki to use images from https://commons.wikimedia.org
