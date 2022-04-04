@@ -137,6 +137,9 @@ wfLoadExtension( 'Cite' );
 wfLoadExtension( 'Scribunto' );
 $wgScribuntoDefaultEngine = 'luastandalone';
 
+# TemplateStyles extension settings
+wfLoadExtension( 'TemplateStyles' );
+
 # SyntaxHighlight extension settings
 wfLoadExtension( 'SyntaxHighlight_GeSHi' );
 
