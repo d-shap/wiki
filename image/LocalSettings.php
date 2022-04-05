@@ -133,15 +133,19 @@ wfLoadSkin( 'Vector' );
 # Cite extension settings
 wfLoadExtension( 'Cite' );
 
+# ParserFunctions extension settings
+wfLoadExtension( 'ParserFunctions' );
+$wgPFEnableStringFunctions = true;
+
 # Scribunto extension settings
 wfLoadExtension( 'Scribunto' );
 $wgScribuntoDefaultEngine = 'luastandalone';
-
-# TemplateStyles extension settings
-wfLoadExtension( 'TemplateStyles' );
 
 # SyntaxHighlight extension settings
 wfLoadExtension( 'SyntaxHighlight_GeSHi' );
 
 # TemplateData extension settings
 wfLoadExtension( 'TemplateData' );
+
+# TemplateStyles extension settings
+wfLoadExtension( 'TemplateStyles' );
