@@ -144,6 +144,9 @@ $wgScribuntoDefaultEngine = 'luastandalone';
 # SyntaxHighlight extension settings
 wfLoadExtension( 'SyntaxHighlight_GeSHi' );
 
+# Tabs extension settings
+wfLoadExtension( 'Tabs' );
+
 # TemplateData extension settings
 wfLoadExtension( 'TemplateData' );
 
