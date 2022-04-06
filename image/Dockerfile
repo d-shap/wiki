@@ -120,8 +120,8 @@ RUN         cd /tmp && \
             mv /var/www/html/$WIKI_FOLDER_NAME /var/www/html/wiki && \
             rm -rf /var/www/html/wiki/images && \
             ln -s /wiki/images /var/www/html/wiki/images && \
-            tar xzf $EXT_TEMPLATY_STYLES_NAME.tar.gz -C /var/www/html/wiki/extensions && \
-            tar xzf $EXT_TABS_NAME.tar.gz -C /var/www/html/wiki/extensions && \
+            tar xzf bin/$EXT_TEMPLATY_STYLES_NAME.tar.gz -C /var/www/html/wiki/extensions && \
+            tar xzf bin/$EXT_TABS_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             rm -rf bin && \
             mv /tmp/LocalSettings.php /var/www/html/wiki && \
             sed -i 's|\$wgDBname.*|\$wgDBname = "'"$DB_NAME"'";|' /var/www/html/wiki/LocalSettings.php && \
