@@ -15,10 +15,8 @@ ENV         DEBIAN_FRONTEND=noninteractive \
             WIKI_DOWNLOAD_URL="https://releases.wikimedia.org/mediawiki/1.36/mediawiki-1.36.1.tar.gz" \
             WIKI_DOWNLOAD_NAME="mediawiki-1.36.1" \
             WIKI_FOLDER_NAME="mediawiki-1.36.1" \
-            EXT_TEMPLATY_STYLES_DOWNLOAD_URL="https://extdist.wmflabs.org/dist/extensions/TemplateStyles-REL1_37-eec8c6c.tar.gz" \
-            EXT_TEMPLATY_STYLES_DOWNLOAD_NAME="TemplateStyles-REL1_37" \
-            EXT_TABS_DOWNLOAD_URL="https://extdist.wmflabs.org/dist/extensions/Tabs-REL1_37-e8fb792.tar.gz" \
-            EXT_TABS_DOWNLOAD_NAME="Tabs-REL1_37"
+            EXT_TEMPLATY_STYLES_NAME="TemplateStyles-REL1_37" \
+            EXT_TABS_NAME="Tabs-REL1_37"
 
 COPY        . /tmp
 
@@ -122,12 +120,9 @@ RUN         cd /tmp && \
             mv /var/www/html/$WIKI_FOLDER_NAME /var/www/html/wiki && \
             rm -rf /var/www/html/wiki/images && \
             ln -s /wiki/images /var/www/html/wiki/images && \
-            wget -O $EXT_TEMPLATY_STYLES_DOWNLOAD_NAME.tar.gz $EXT_TEMPLATY_STYLES_DOWNLOAD_URL && \
-            tar xzf $EXT_TEMPLATY_STYLES_DOWNLOAD_NAME.tar.gz -C /var/www/html/wiki/extensions && \
-            rm $EXT_TEMPLATY_STYLES_DOWNLOAD_NAME.tar.gz && \
-            wget -O $EXT_TABS_DOWNLOAD_NAME.tar.gz $EXT_TABS_DOWNLOAD_URL && \
-            tar xzf $EXT_TABS_DOWNLOAD_NAME.tar.gz -C /var/www/html/wiki/extensions && \
-            rm $EXT_TABS_DOWNLOAD_NAME.tar.gz && \
+            tar xzf $EXT_TEMPLATY_STYLES_NAME.tar.gz -C /var/www/html/wiki/extensions && \
+            tar xzf $EXT_TABS_NAME.tar.gz -C /var/www/html/wiki/extensions && \
+            rm -rf bin && \
             mv /tmp/LocalSettings.php /var/www/html/wiki && \
             sed -i 's|\$wgDBname.*|\$wgDBname = "'"$DB_NAME"'";|' /var/www/html/wiki/LocalSettings.php && \
             sed -i 's|\$wgDBuser.*|\$wgDBuser = "'"$DB_USER_NAME"'";|' /var/www/html/wiki/LocalSettings.php && \
