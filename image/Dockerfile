@@ -15,6 +15,7 @@ ENV         DEBIAN_FRONTEND=noninteractive \
             WIKI_DOWNLOAD_URL="https://releases.wikimedia.org/mediawiki/1.36/mediawiki-1.36.1.tar.gz" \
             WIKI_DOWNLOAD_NAME="mediawiki-1.36.1" \
             WIKI_FOLDER_NAME="mediawiki-1.36.1" \
+            EXT_CODE_MIRROR_NAME="CodeMirror-REL1_37" \
             EXT_TEMPLATY_STYLES_NAME="TemplateStyles-REL1_37" \
             EXT_TABS_NAME="Tabs-REL1_37"
 
@@ -120,6 +121,7 @@ RUN         cd /tmp && \
             mv /var/www/html/$WIKI_FOLDER_NAME /var/www/html/wiki && \
             rm -rf /var/www/html/wiki/images && \
             ln -s /wiki/images /var/www/html/wiki/images && \
+            tar xzf bin/$EXT_CODE_MIRROR_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_TEMPLATY_STYLES_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_TABS_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             rm -rf bin && \
