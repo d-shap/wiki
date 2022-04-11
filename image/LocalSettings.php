@@ -161,8 +161,8 @@ wfLoadExtension( 'TemplateData' );
 wfLoadExtension( 'TemplateStyles' );
 
 # VisualEditor extension settings
-wfLoadExtension( 'VisualEditor' );
-$wgDefaultUserOptions['visualeditor-enable'] = 0;
+# wfLoadExtension( 'VisualEditor' );
+# $wgDefaultUserOptions['visualeditor-enable'] = 0;
 
 # WikiEditor extension settings
 wfLoadExtension( 'WikiEditor' );
