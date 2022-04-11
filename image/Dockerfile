@@ -16,7 +16,7 @@ ENV         DEBIAN_FRONTEND=noninteractive \
             WIKI_DOWNLOAD_NAME="mediawiki-1.36.1" \
             WIKI_FOLDER_NAME="mediawiki-1.36.1" \
             EXT_CODE_MIRROR_NAME="CodeMirror-REL1_37" \
-            EXT_NO_TITLE_NAME="NoTitle-REL1_37.tar.gz" \
+            EXT_NO_TITLE_NAME="NoTitle-REL1_37" \
             EXT_TABS_NAME="Tabs-REL1_37" \
             EXT_TEMPLATY_STYLES_NAME="TemplateStyles-REL1_37"
 
