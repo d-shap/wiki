@@ -133,6 +133,13 @@ wfLoadSkin( 'Vector' );
 # Cite extension settings
 wfLoadExtension( 'Cite' );
 
+# CodeMirror extension settings
+wfLoadExtension( 'CodeMirror' );
+$wgDefaultUserOptions['usecodemirror'] = 1;
+$wgCodeMirrorEnableBracketMatching = true;
+$wgCodeMirrorAccessibilityColors = false;
+$wgCodeMirrorLineNumberingNamespaces = null;
+
 # ParserFunctions extension settings
 wfLoadExtension( 'ParserFunctions' );
 $wgPFEnableStringFunctions = true;
