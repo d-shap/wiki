@@ -152,3 +152,12 @@ wfLoadExtension( 'TemplateData' );
 
 # TemplateStyles extension settings
 wfLoadExtension( 'TemplateStyles' );
+
+# VisualEditor extension settings
+wfLoadExtension( 'VisualEditor' );
+$wgDefaultUserOptions['visualeditor-enable'] = 0;
+
+# WikiEditor extension settings
+wfLoadExtension( 'WikiEditor' );
+$wgDefaultUserOptions['usebetatoolbar'] = 1;
+$wgWikiEditorRealtimePreview = true;
