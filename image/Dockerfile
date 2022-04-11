@@ -16,8 +16,9 @@ ENV         DEBIAN_FRONTEND=noninteractive \
             WIKI_DOWNLOAD_NAME="mediawiki-1.36.1" \
             WIKI_FOLDER_NAME="mediawiki-1.36.1" \
             EXT_CODE_MIRROR_NAME="CodeMirror-REL1_37" \
-            EXT_TEMPLATY_STYLES_NAME="TemplateStyles-REL1_37" \
-            EXT_TABS_NAME="Tabs-REL1_37"
+            EXT_NO_TITLE_NAME="NoTitle-REL1_37.tar.gz" \
+            EXT_TABS_NAME="Tabs-REL1_37" \
+            EXT_TEMPLATY_STYLES_NAME="TemplateStyles-REL1_37"
 
 COPY        . /tmp
 
@@ -122,8 +123,9 @@ RUN         cd /tmp && \
             rm -rf /var/www/html/wiki/images && \
             ln -s /wiki/images /var/www/html/wiki/images && \
             tar xzf bin/$EXT_CODE_MIRROR_NAME.tar.gz -C /var/www/html/wiki/extensions && \
-            tar xzf bin/$EXT_TEMPLATY_STYLES_NAME.tar.gz -C /var/www/html/wiki/extensions && \
+            tar xzf bin/$EXT_NO_TITLE_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_TABS_NAME.tar.gz -C /var/www/html/wiki/extensions && \
+            tar xzf bin/$EXT_TEMPLATY_STYLES_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             rm -rf bin && \
             mv /tmp/LocalSettings.php /var/www/html/wiki && \
             sed -i 's|\$wgDBname.*|\$wgDBname = "'"$DB_NAME"'";|' /var/www/html/wiki/LocalSettings.php && \
