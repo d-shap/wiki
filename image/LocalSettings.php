@@ -140,6 +140,10 @@ $wgCodeMirrorEnableBracketMatching = true;
 $wgCodeMirrorAccessibilityColors = false;
 $wgCodeMirrorLineNumberingNamespaces = null;
 
+# NoTitle extension settings
+wfLoadExtension( 'NoTitle' );
+$wgRestrictDisplayTitle = false;
+
 # ParserFunctions extension settings
 wfLoadExtension( 'ParserFunctions' );
 $wgPFEnableStringFunctions = true;
