@@ -224,6 +224,9 @@ wfLoadExtension( 'TemplateStylesExtender' );
 # TemplateWizard extension settings
 wfLoadExtension( 'TemplateWizard' );
 
+# TextExtracts extension settings
+wfLoadExtension( 'TextExtracts' );
+
 # WikiEditor extension settings
 wfLoadExtension( 'WikiEditor' );
 $wgHiddenPrefs[] = 'usebetatoolbar';
