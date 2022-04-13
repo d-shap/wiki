@@ -190,6 +190,9 @@ $wgPFEnableStringFunctions = true;
 # Poem extension settings
 wfLoadExtension( 'Poem' );
 
+# RegexFunctions extension settings
+wfLoadExtension( 'RegexFunctions' );
+
 # Scribunto extension settings
 wfLoadExtension( 'Scribunto' );
 $wgScribuntoDefaultEngine = 'luastandalone';
