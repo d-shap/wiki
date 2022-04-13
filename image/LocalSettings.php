@@ -168,6 +168,11 @@ $wgHeaderTabsDisableDefaultToc = true;
 # InputBox extension settings
 wfLoadExtension( 'InputBox' );
 
+# LinkTarget extension settings
+wfLoadExtension( 'LinkTarget' );
+$wgLinkTargetDefault = '_self';
+$wgExternalLinkTarget = '_blank';
+
 # NoTitle extension settings
 wfLoadExtension( 'NoTitle' );
 $wgRestrictDisplayTitle = false;
