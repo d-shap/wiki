@@ -23,6 +23,7 @@ ENV         DEBIAN_FRONTEND=noninteractive \
             EXT_HEADER_TABS_NAME="HeaderTabs-REL1_37" \
             EXT_INPUT_BOX_NAME="InputBox-REL1_37" \
             EXT_LINK_TARGET_NAME="LinkTarget-REL1_37" \
+            EXT_LOOPS_NAME="Loops-REL1_37" \
             EXT_NO_TITLE_NAME="NoTitle-REL1_37" \
             EXT_TABS_NAME="Tabs-REL1_37" \
             EXT_TEMPLATY_STYLES_NAME="TemplateStyles-REL1_37"
@@ -137,6 +138,7 @@ RUN         cd /tmp && \
             tar xzf bin/$EXT_HEADER_TABS_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_INPUT_BOX_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_LINK_TARGET_NAME.tar.gz -C /var/www/html/wiki/extensions && \
+            tar xzf bin/$EXT_LOOPS_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_NO_TITLE_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_TABS_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_TEMPLATY_STYLES_NAME.tar.gz -C /var/www/html/wiki/extensions && \
