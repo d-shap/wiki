@@ -158,6 +158,13 @@ wfLoadExtension( 'CSS' );
 # Gadgets extension settings
 wfLoadExtension( 'Gadgets' );
 
+# HeaderTabs extension settings
+wfLoadExtension( 'HeaderTabs' );
+$wgHeaderTabsUseHistory = false;
+$wgHeaderTabsRenderSingleTab = true;
+$wgHeaderTabsAutomaticNamespaces[] = NS_MAIN;
+$wgHeaderTabsDisableDefaultToc = true;
+
 # NoTitle extension settings
 wfLoadExtension( 'NoTitle' );
 $wgRestrictDisplayTitle = false;
