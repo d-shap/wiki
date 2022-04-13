@@ -187,6 +187,9 @@ $wgRestrictDisplayTitle = false;
 wfLoadExtension( 'ParserFunctions' );
 $wgPFEnableStringFunctions = true;
 
+# Poem extension settings
+wfLoadExtension( 'Poem' );
+
 # Scribunto extension settings
 wfLoadExtension( 'Scribunto' );
 $wgScribuntoDefaultEngine = 'luastandalone';
