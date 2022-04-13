@@ -133,9 +133,6 @@ wfLoadSkin( 'Vector' );
 # Arrays extension settings
 wfLoadExtension( 'Arrays' );
 
-# BCmath extension settings
-wfLoadExtension( 'BCmath' );
-
 # Capiunto extension settings
 wfLoadExtension( 'Capiunto' );
 
