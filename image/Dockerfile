@@ -29,6 +29,7 @@ ENV         DEBIAN_FRONTEND=noninteractive \
             EXT_NO_TITLE_NAME="NoTitle-REL1_37" \
             EXT_POEM_NAME="Poem-REL1_37" \
             EXT_REGEX_FUNCTIONS_NAME="RegexFunctions-REL1_37" \
+            EXT_SPOILERS_NAME="Spoilers-REL1_37" \
             EXT_TABS_NAME="Tabs-REL1_37" \
             EXT_TEMPLATY_STYLES_NAME="TemplateStyles-REL1_37"
 
@@ -148,6 +149,7 @@ RUN         cd /tmp && \
             tar xzf bin/$EXT_NO_TITLE_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_POEM_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_REGEX_FUNCTIONS_NAME.tar.gz -C /var/www/html/wiki/extensions && \
+            tar xzf bin/$EXT_SPOILERS_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_TABS_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_TEMPLATY_STYLES_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             rm -rf bin && \
