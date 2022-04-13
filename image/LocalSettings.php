@@ -173,6 +173,9 @@ wfLoadExtension( 'LinkTarget' );
 $wgLinkTargetDefault = '_self';
 $wgExternalLinkTarget = '_blank';
 
+# Loops extension settings
+wfLoadExtension( 'Loops' );
+
 # NoTitle extension settings
 wfLoadExtension( 'NoTitle' );
 $wgRestrictDisplayTitle = false;
