@@ -16,7 +16,6 @@ ENV         DEBIAN_FRONTEND=noninteractive \
             WIKI_DOWNLOAD_NAME="mediawiki-1.37.2" \
             WIKI_FOLDER_NAME="mediawiki-1.37.2" \
             EXT_ARRAYS_NAME="Arrays-REL1_37" \
-            EXT_BCMATH_NAME="BCmath-REL1_37" \
             EXT_CAPIUNTO_NAME="Capiunto-REL1_37" \
             EXT_CODE_MIRROR_NAME="CodeMirror-REL1_37" \
             EXT_CSS_NAME="CSS-REL1_37" \
@@ -142,7 +141,6 @@ RUN         cd /tmp && \
             rm -rf /var/www/html/wiki/images && \
             ln -s /wiki/images /var/www/html/wiki/images && \
             tar xzf bin/$EXT_ARRAYS_NAME.tar.gz -C /var/www/html/wiki/extensions && \
-            tar xzf bin/$EXT_BCMATH_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_CAPIUNTO_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_CODE_MIRROR_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_CSS_NAME.tar.gz -C /var/www/html/wiki/extensions && \
