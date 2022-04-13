@@ -155,6 +155,9 @@ $wgCodeMirrorLineNumberingNamespaces = null;
 # CSS extension settings
 wfLoadExtension( 'CSS' );
 
+# Gadgets extension settings
+wfLoadExtension( 'Gadgets' );
+
 # NoTitle extension settings
 wfLoadExtension( 'NoTitle' );
 $wgRestrictDisplayTitle = false;
