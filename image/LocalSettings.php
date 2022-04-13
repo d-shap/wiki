@@ -165,6 +165,9 @@ $wgHeaderTabsRenderSingleTab = true;
 $wgHeaderTabsAutomaticNamespaces[] = NS_MAIN;
 $wgHeaderTabsDisableDefaultToc = true;
 
+# InputBox extension settings
+wfLoadExtension( 'InputBox' );
+
 # NoTitle extension settings
 wfLoadExtension( 'NoTitle' );
 $wgRestrictDisplayTitle = false;
