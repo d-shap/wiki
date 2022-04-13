@@ -218,6 +218,9 @@ wfLoadExtension( 'TemplateSandbox' );
 # TemplateStyles extension settings
 wfLoadExtension( 'TemplateStyles' );
 
+# TemplateStylesExtender extension settings
+wfLoadExtension( 'TemplateStylesExtender' );
+
 # WikiEditor extension settings
 wfLoadExtension( 'WikiEditor' );
 $wgHiddenPrefs[] = 'usebetatoolbar';
