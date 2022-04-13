@@ -15,7 +15,12 @@ ENV         DEBIAN_FRONTEND=noninteractive \
             WIKI_DOWNLOAD_URL="https://releases.wikimedia.org/mediawiki/1.36/mediawiki-1.36.1.tar.gz" \
             WIKI_DOWNLOAD_NAME="mediawiki-1.36.1" \
             WIKI_FOLDER_NAME="mediawiki-1.36.1" \
+            EXT_ARRAYS_NAME="Arrays-REL1_37" \
+            EXT_ATTACHMENTS_NAME="Attachments-REL1_37" \
+            EXT_BCMATH_NAME="BCmath-REL1_37" \
+            EXT_CAPIUNTO_NAME="Capiunto-REL1_37" \
             EXT_CODE_MIRROR_NAME="CodeMirror-REL1_37" \
+            EXT_CSS_NAME="CSS-REL1_37" \
             EXT_NO_TITLE_NAME="NoTitle-REL1_37" \
             EXT_TABS_NAME="Tabs-REL1_37" \
             EXT_TEMPLATY_STYLES_NAME="TemplateStyles-REL1_37"
@@ -122,7 +127,12 @@ RUN         cd /tmp && \
             mv /var/www/html/$WIKI_FOLDER_NAME /var/www/html/wiki && \
             rm -rf /var/www/html/wiki/images && \
             ln -s /wiki/images /var/www/html/wiki/images && \
+            tar xzf bin/$EXT_ARRAYS_NAME.tar.gz -C /var/www/html/wiki/extensions && \
+            tar xzf bin/$EXT_ATTACHMENTS_NAME.tar.gz -C /var/www/html/wiki/extensions && \
+            tar xzf bin/$EXT_BCMATH_NAME.tar.gz -C /var/www/html/wiki/extensions && \
+            tar xzf bin/$EXT_CAPIUNTO_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_CODE_MIRROR_NAME.tar.gz -C /var/www/html/wiki/extensions && \
+            tar xzf bin/$EXT_CSS_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_NO_TITLE_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_TABS_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_TEMPLATY_STYLES_NAME.tar.gz -C /var/www/html/wiki/extensions && \
