@@ -203,7 +203,7 @@ $wgScribuntoDefaultEngine = 'luastandalone';
 # Spoilers extension settings
 wfLoadExtension( 'Spoilers' );
 
-# SyntaxHighlight extension settings
+# SyntaxHighlight_GeSHi extension settings
 wfLoadExtension( 'SyntaxHighlight_GeSHi' );
 
 # Tabs extension settings
