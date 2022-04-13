@@ -130,8 +130,24 @@ wfLoadSkin( 'Vector' );
 # End of automatically generated settings.
 # Add more configuration options below.
 
+# Arrays extension settings
+wfLoadExtension( 'Arrays' );
+
+# Attachments extension settings
+wfLoadExtension( 'Attachments' );
+$wgAttachmentsNamespaces[NS_MAIN] = true;
+
+# BCmath extension settings
+wfLoadExtension( 'BCmath' );
+
+# Capiunto extension settings
+wfLoadExtension( 'Capiunto' );
+
 # Cite extension settings
 wfLoadExtension( 'Cite' );
+
+# CodeEditor extension settings
+wfLoadExtension( 'CodeEditor' );
 
 # CodeMirror extension settings
 wfLoadExtension( 'CodeMirror' );
@@ -139,6 +155,9 @@ $wgDefaultUserOptions['usecodemirror'] = 1;
 $wgCodeMirrorEnableBracketMatching = true;
 $wgCodeMirrorAccessibilityColors = false;
 $wgCodeMirrorLineNumberingNamespaces = null;
+
+# CSS extension settings
+wfLoadExtension( 'CSS' );
 
 # NoTitle extension settings
 wfLoadExtension( 'NoTitle' );
