@@ -238,3 +238,6 @@ $wgWikiEditorRealtimePreview = true;
 
 # WikiTextLoggedInOut extension settings
 wfLoadExtension( 'WikiTextLoggedInOut' );
+
+# YetAnotherKeywords extension settings
+wfLoadExtension( 'YetAnotherKeywords' );
