@@ -227,6 +227,9 @@ wfLoadExtension( 'TemplateWizard' );
 # TextExtracts extension settings
 wfLoadExtension( 'TextExtracts' );
 
+# Variables extension settings
+wfLoadExtension( 'Variables' );
+
 # WikiEditor extension settings
 wfLoadExtension( 'WikiEditor' );
 $wgHiddenPrefs[] = 'usebetatoolbar';
