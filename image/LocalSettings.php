@@ -235,3 +235,6 @@ wfLoadExtension( 'WikiEditor' );
 $wgHiddenPrefs[] = 'usebetatoolbar';
 $wgDefaultUserOptions['usebetatoolbar'] = 1;
 $wgWikiEditorRealtimePreview = true;
+
+# WikiTextLoggedInOut extension settings
+wfLoadExtension( 'WikiTextLoggedInOut' );
