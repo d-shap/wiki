@@ -33,7 +33,8 @@ ENV         DEBIAN_FRONTEND=noninteractive \
             EXT_TABS_NAME="Tabs-REL1_37" \
             EXT_TEMPLATE_SANDBOX_NAME="TemplateSandbox-REL1_37" \
             EXT_TEMPLATE_STYLES_NAME="TemplateStyles-REL1_37" \
-            EXT_TEMPLATE_STYLES_EXTENDER_NAME="TemplateStylesExtender-REL1_37"
+            EXT_TEMPLATE_STYLES_EXTENDER_NAME="TemplateStylesExtender-REL1_37" \
+            EXT_TEMPLATE_WIZARD_NAME="TemplateWizard-REL1_37"
 
 COPY        . /tmp
 
@@ -156,6 +157,7 @@ RUN         cd /tmp && \
             tar xzf bin/$EXT_TEMPLATE_SANDBOX_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_TEMPLATE_STYLES_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_TEMPLATE_STYLES_EXTENDER_NAME.tar.gz -C /var/www/html/wiki/extensions && \
+            tar xzf bin/$EXT_TEMPLATE_WIZARD_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             rm -rf bin && \
             mv /tmp/LocalSettings.php /var/www/html/wiki && \
             sed -i 's|\$wgDBname.*|\$wgDBname = "'"$DB_NAME"'";|' /var/www/html/wiki/LocalSettings.php && \
