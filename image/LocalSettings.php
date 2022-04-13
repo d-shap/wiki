@@ -212,6 +212,9 @@ wfLoadExtension( 'Tabs' );
 # TemplateData extension settings
 wfLoadExtension( 'TemplateData' );
 
+# TemplateSandbox extension settings
+wfLoadExtension( 'TemplateSandbox' );
+
 # TemplateStyles extension settings
 wfLoadExtension( 'TemplateStyles' );
 
