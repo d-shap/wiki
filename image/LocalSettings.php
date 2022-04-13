@@ -133,18 +133,14 @@ wfLoadSkin( 'Vector' );
 # Arrays extension settings
 wfLoadExtension( 'Arrays' );
 
-# Attachments extension settings
-wfLoadExtension( 'Attachments' );
-$wgAttachmentsNamespaces[NS_MAIN] = true;
-
-# BCmath extension settings
-wfLoadExtension( 'BCmath' );
-
 # Capiunto extension settings
 wfLoadExtension( 'Capiunto' );
 
 # Cite extension settings
 wfLoadExtension( 'Cite' );
+
+# CiteThisPage extension settings
+wfLoadExtension( 'CiteThisPage' );
 
 # CodeEditor extension settings
 wfLoadExtension( 'CodeEditor' );
