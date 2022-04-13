@@ -200,6 +200,9 @@ wfLoadExtension( 'RegexFunctions' );
 wfLoadExtension( 'Scribunto' );
 $wgScribuntoDefaultEngine = 'luastandalone';
 
+# Spoilers extension settings
+wfLoadExtension( 'Spoilers' );
+
 # SyntaxHighlight extension settings
 wfLoadExtension( 'SyntaxHighlight_GeSHi' );
 
