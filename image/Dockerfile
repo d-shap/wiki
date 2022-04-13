@@ -27,6 +27,7 @@ ENV         DEBIAN_FRONTEND=noninteractive \
             EXT_MY_VARIABLES_NAME="MyVariables-REL1_37" \
             EXT_NO_TITLE_NAME="NoTitle-REL1_37" \
             EXT_POEM_NAME="Poem-REL1_37" \
+            EXT_REGEX_FUNCTIONS_NAME="RegexFunctions-REL1_37" \
             EXT_TABS_NAME="Tabs-REL1_37" \
             EXT_TEMPLATY_STYLES_NAME="TemplateStyles-REL1_37"
 
@@ -144,6 +145,7 @@ RUN         cd /tmp && \
             tar xzf bin/$EXT_MY_VARIABLES_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_NO_TITLE_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_POEM_NAME.tar.gz -C /var/www/html/wiki/extensions && \
+            tar xzf bin/$EXT_REGEX_FUNCTIONS_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_TABS_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_TEMPLATY_STYLES_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             rm -rf bin && \
