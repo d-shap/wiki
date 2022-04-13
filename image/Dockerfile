@@ -36,7 +36,8 @@ ENV         DEBIAN_FRONTEND=noninteractive \
             EXT_TEMPLATE_STYLES_EXTENDER_NAME="TemplateStylesExtender-REL1_37" \
             EXT_TEMPLATE_WIZARD_NAME="TemplateWizard-REL1_37" \
             EXT_VARIABLES_NAME="Variables-REL1_37" \
-            EXT_WIKI_TEXT_LOGGED_IN_OUT_NAME="WikiTextLoggedInOut-REL1_37"
+            EXT_WIKI_TEXT_LOGGED_IN_OUT_NAME="WikiTextLoggedInOut-REL1_37" \
+            EXT_YET_ANOTHER_KEYWORDS_NAME="YetAnotherKeywords-REL1_37"
 
 COPY        . /tmp
 
@@ -162,6 +163,7 @@ RUN         cd /tmp && \
             tar xzf bin/$EXT_TEMPLATE_WIZARD_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_VARIABLES_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             tar xzf bin/$EXT_WIKI_TEXT_LOGGED_IN_OUT_NAME.tar.gz -C /var/www/html/wiki/extensions && \
+            tar xzf bin/$EXT_YET_ANOTHER_KEYWORDS_NAME.tar.gz -C /var/www/html/wiki/extensions && \
             rm -rf bin && \
             mv /tmp/LocalSettings.php /var/www/html/wiki && \
             sed -i 's|\$wgDBname.*|\$wgDBname = "'"$DB_NAME"'";|' /var/www/html/wiki/LocalSettings.php && \
